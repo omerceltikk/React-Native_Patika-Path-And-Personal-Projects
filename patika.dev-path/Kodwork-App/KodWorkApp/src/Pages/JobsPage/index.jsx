@@ -4,14 +4,14 @@ import { FlatList, ScrollView,View,TouchableOpacity,Text } from 'react-native'
 import JobsCard from '../../Components/JobsCard/JobsCard'
 import { styles } from './Jobspage.Style'
 
-const Jobs = () => {
+const Jobs = ({ route, navigation }) => {
   const [page, setPage] = useState(1)
   const {err, loading , data} = useFetch(`https://www.themuse.com/api/public/jobs?page=${page}`,page);
  
-  const HandlePress = () => {
-
+  const HandlePress = (id) => {
+    navigation.navigate("Detail", { id })
   }
-  const renderProduct = ({ item }) => <JobsCard item={item} onPress={() => HandlePress()} />
+  const renderProduct = ({ item }) => <JobsCard item={item} onPress={() => HandlePress(item.id)} />
   if(loading){
     return(
       <Text>Loading...</Text>

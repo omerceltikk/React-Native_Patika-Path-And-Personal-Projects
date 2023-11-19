@@ -2,10 +2,14 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {View,ScrollView,FlatList, StyleSheet,Alert} from 'react-native'
 import FavCard from '../../Components/FavCard'
-const Favorites = () => {
+const Favorites = ({ navigation }) => {
   const data = useSelector((state) => state.jobs);
   
-  const renderProduct = ({ item }) => <FavCard item={item} onPress={() => HandlePress()}  />
+  const HandlePress = (id) => {
+    navigation.navigate("Detail", { id })
+  }
+  const renderProduct = ({ item }) => <FavCard item={item} onPress={() => HandlePress(item.id)}  />
+
   return (
     <View style={styles.container}>
     <ScrollView>
