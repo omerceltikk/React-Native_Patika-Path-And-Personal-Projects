@@ -1,12 +1,12 @@
-import {Provider} from "react-redux"
+import { Provider } from "react-redux"
 import store from "./Redux/Store";
 import { Text } from "react-native";
+import Router from "./Router";
 function App() {
+
   return (
     <Provider store={store}>
-    <Text>
-      sadasdsad
-      </Text>  
+      <Router />
     </Provider>
   );
 }
