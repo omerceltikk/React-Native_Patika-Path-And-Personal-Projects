@@ -23,9 +23,9 @@ function App() {
   useEffect(() => {
     GetCurrentPosition();
   }, [])
-  const { err, loading, data } = UseFetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${String(location.latitude)}&lon=${String(location.longitude)}&units=metric&appid=576d68ad7d22026d54933865b9d967d9`);
+  const { err, loading, data } = UseFetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${String(location.latitude)}&lon=${String(location.longitude)}&units=metric&appid=${Config.API_KEY}`);
   const handlePress = () => {
-    const data = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&appid=576d68ad7d22026d54933865b9d967d9`).then(res => res.json()).then(res => setCityData(res));
+    const data = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&appid=${Config.API_KEY}`).then(res => res.json()).then(res => setCityData(res));
   }
   return (
     <>
