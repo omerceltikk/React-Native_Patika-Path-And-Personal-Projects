@@ -3,19 +3,16 @@ import { FlatList, ScrollView,View,TouchableOpacity,Text } from 'react-native'
 import JobsCard from '../../Components/JobsCard/JobsCard'
 import { styles } from './Comicspage.Style'
 import useFetch from "use-http"
-// import {PUBLIC_API_KEY,PRIVATE_API_KEY} from "@env"
+import Config from 'react-native-config' 
 import Loading from '../Loading'
 import Error from '../Error'
 import CryptoJS from "crypto-js"
 const Comics = ({ route, navigation }) => {
   const [page, setPage] = useState(1)
   const ts = new Date().getTime();  
-  // const PUBLIC_API_KEY ="24645151144886463cff4d4cf1f2803d"
-  const PRIVATE_API_KEY =""
-  const hash = CryptoJS.MD5(ts+ PUBLIC_API_KEY + PRIVATE_API_KEY).toString();
-  const {get, post, response, loading, error} = useFetch(`https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${PUBLIC_API_KEY}&hash=${hash}`);
+  // const hash = CryptoJS.MD5(ts+ PUBLIC_API_KEY + PRIVATE_API_KEY).toString();
+  const {get, post, response, loading, error} = useFetch(`https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${Config.PUBLIC_API_KEY}`);
   // const data = get();
-  // console.log(data);
   const HandlePress = (id) => {
     navigation.navigate("Detail", { id })
   }
@@ -40,6 +37,8 @@ const Comics = ({ route, navigation }) => {
           Previous Page
           </Text>
           </TouchableOpacity>
+          <Text> {Config.PUBLIC_API_KEY}</Text>
+
       <TouchableOpacity onPress={() => {
           setPage(page+1);
         }} style={styles.button}>
