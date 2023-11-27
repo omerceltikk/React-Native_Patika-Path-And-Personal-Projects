@@ -1,7 +1,10 @@
 # OSX
 #
 .DS_Store
-
+*.env
+*.env.example
+*.env.local
+*.env.staging
 # Xcode
 #
 build/
@@ -27,7 +30,6 @@ ios/.xcode.env.local
 build/
 .idea
 .gradle
-.env
 local.properties
 *.iml
 *.hprof

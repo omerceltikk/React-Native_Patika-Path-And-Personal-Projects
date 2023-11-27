@@ -5,14 +5,15 @@ import { styles } from './Comicspage.Style'
 import useFetch from "use-http"
 import Config from 'react-native-config' 
 import Loading from '../Loading'
-import Error from '../Error'
 import CryptoJS from "crypto-js"
+import Error from '../Error'
 const Comics = ({ route, navigation }) => {
   const [page, setPage] = useState(1)
   const ts = new Date().getTime();  
-  // const hash = CryptoJS.MD5(ts+ PUBLIC_API_KEY + PRIVATE_API_KEY).toString();
-  const {get, post, response, loading, error} = useFetch(`https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${Config.PUBLIC_API_KEY}`);
-  // const data = get();
+  const hash = CryptoJS.MD5(ts + Config.PRIVATE_API_KEY + Config.PUBLIC_API_KEY ).toString();
+  const {loading, error, data = []} = useFetch(`http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${Config.PUBLIC_API_KEY}&hash=${hash}`,[]);
+  // const data = get(``);
+  console.log(data);
   const HandlePress = (id) => {
     navigation.navigate("Detail", { id })
   }
