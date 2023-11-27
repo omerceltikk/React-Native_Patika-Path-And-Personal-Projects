@@ -9,7 +9,7 @@ const FavPage = () => {
   const renderItem = ({item}) => <FavCard item={item}/>
 if(data.data.length == 0){
   return(
-    <Text>Yo did not any favorites item yet</Text>
+    <Text>You did not have any favorites item yet</Text>
   )
 }else{
   return (
