@@ -1,27 +1,45 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import {View,ScrollView,FlatList, StyleSheet,Alert} from 'react-native'
-import FavCard from '../../Components/FavCard'
-const Characters = ({ navigation }) => {
-  const data = useSelector((state) => state.marvel);
-  
+import React, { useState } from 'react'
+import { FlatList, ScrollView,View,TouchableOpacity,Text } from 'react-native'
+import CharactersCard from '../../Components/CharactersCard'
+import { styles } from './Comicspage.Style'
+import useFetch from "use-http"
+import Config from 'react-native-config' 
+import Loading from '../Loading'
+import CryptoJS from "crypto-js"
+import Error from '../Error'
+const Comics = ({ navigation }) => {
+  const [page, setPage] = useState(20);
+  const ts = new Date().getTime();  
+  const hash = CryptoJS.MD5(ts + Config.PRIVATE_API_KEY + Config.PUBLIC_API_KEY ).toString();
+  const {loading, error, data = []} = useFetch(`http://gateway.marvel.com/v1/public/characters?limit=${page}&ts=${ts}&apikey=${Config.PUBLIC_API_KEY}&hash=${hash}`,[page]);
+  console.log(data);
   const HandlePress = (id) => {
-    navigation.navigate("Detail", { id })
+    navigation.navigate("Detail", { id, "type": "characters" })
   }
-  // const renderProduct = ({ item }) => <FavCard item={item} onPress={() => HandlePress(item.id)}  />
-
+  const renderProduct = ({ item }) => <CharactersCard item={item} onPress={() => HandlePress(item.id)} />
+  if(loading){
+    return(
+        <Loading/>
+      )
+  }else if(error){
+    return(
+      <Error props={error}/>
+    )
+  }
   return (
-    <View style={styles.container}>
     <ScrollView>
-      <FlatList scrollEnabled={false} data={data.data} />  
+      <FlatList scrollEnabled={false} data={data.data.results} renderItem={renderProduct} />
+      <View style={styles.buttonArea}>
+      <TouchableOpacity disabled={page >= 100 ? true : false} onPress={() => {
+          setPage(page < 100 ? page+20 : page);
+        }} style={page< 100 ? styles.button : styles.disabled}>
+        <Text style={page< 100 ? styles.button : styles.disabled}>
+          Load More
+          </Text>
+          </TouchableOpacity>
+      </View>
     </ScrollView>
-    </View>
   )
 }
-const styles = StyleSheet.create({
-  container:{
-    backgroundColor:"#363062",
-    flex:1
-  }
-})
-export default Characters
+
+export default Comics

@@ -6,19 +6,28 @@ import DetailPage from './Pages/DetailPage';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useSelector} from 'react-redux/es/hooks/useSelector';
 import LogInPage from './Pages/LogInPage';
-import FavPage from './Pages/FavPage';
 import SıgnUpPage from './Pages/SıgnUpPage';
-
+import FavPage from './Pages/FavPage';
 const Router = () => {
-  // const data = useSelector(state => state.marvel);
-  // console.log(data.isLoggedIn);
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen component={LogInPage} name='LogInPage'/> */}
-        {/* <Stack.Screen component={SıgnUpPage} name='SıgnUpPage'/> */}
-        <Stack.Screen name="MainPageRouter" component={MainPageRouter} />
+        <Stack.Screen options={{
+            headerShown: false,
+          }} component={LogInPage}
+           name='LogInPage'/>
+        <Stack.Screen options={{
+            headerShown: false,
+          }} component={SıgnUpPage} 
+          name='SıgnUpPage'/>
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="MainPageRouter"
+          component={MainPageRouter}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -40,7 +49,6 @@ const MainPageRouter = () => {
         component={CharactersRouter}
       />
       <Tab.Screen
-        options={{headerShown: false}}
         name="Favorites"
         component={FavPage}
       />

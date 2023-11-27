@@ -1,14 +1,23 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-
+import { View,Text, FlatList } from 'react-native'
+import { useSelector } from 'react-redux'
+import FavCard from "../../Components/FavCard"
+import { styles } from './FavPage.Style'
 const FavPage = () => {
+  const data = useSelector((state) => state.marvel);
+  console.log(data.data);
+  const renderItem = ({item}) => <FavCard item={item}/>
+if(data.data.length == 0){
+  return(
+    <Text>Yo did not any favorites item yet</Text>
+  )
+}else{
   return (
-      <View>
-        <Text>
-          FavPage
-        </Text>
-      </View>
+    <View style={styles.container}>
+      <FlatList renderItem={renderItem} data={data.data}/>
+    </View>
     )
+  }
 }
 
 export default FavPage

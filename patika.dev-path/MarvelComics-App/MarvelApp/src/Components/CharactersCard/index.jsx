@@ -1,33 +1,35 @@
 import React from 'react'
-import { View, Text, TouchableOpacity,Alert } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, Image,FlatList } from 'react-native'
 import { styles } from './JobsCard.Style'
 import { useDispatch } from 'react-redux'
 import { addFavorites } from '../../Redux/Slices/GeneralSlice'
-const JobsCard = ({ item, onPress }) => {
+const CharactersCard = ({ item, onPress }) => {
   const dispatch = useDispatch();
-const HandlePress = () => {
-  dispatch(addFavorites(item));
-}
+  const renderProduct = ({ item }) =>
+   <TouchableOpacity>
+    <Text>
+      {item.name}
+    </Text>
+  </TouchableOpacity>
+  const HandlePress = () => {
+    dispatch(addFavorites(item));
+  }
+  console.log(item.urls[0]?.url);
   return (
     <View key={item.id} style={styles.card}>
       <View style={styles.generalCard}>
-        <View style={styles.innerCard}>
-          <View style={styles.inner}>
-            <Text style={styles.name}>{item.name}</Text>
-          </View>
-          <View style={styles.inner}>
-            <Text style={styles.category}>{item.categories[0].name}</Text>
-          </View>
+        {item.thumbnail && <Image style={styles.image} source={{ uri: `${item.thumbnail?.path}.${item.thumbnail?.extension}` }} />
+        }
+        <View>
+          <Text style={styles.name}>{item.name}</Text>
         </View>
+        <View>
+          <Text>{item.description}</Text>
+        </View>
+        
         <View style={styles.innerCard}>
-          <View style={styles.inner}>
-            <Text>{item.levels[0].name}</Text>
-          </View>
-          <View style={styles.inner}>
-            <Text>{item.locations[0].name}</Text>
-          </View>
-          <View style={styles.inner}>
-            <Text>{item.company.name}</Text>
+          <View >
+            <FlatList horizontal={false} numColumns={2} columnWrapperStyle={styles.inner} scrollEnabled={false} data={item.stories?.items} renderItem={renderProduct} />
           </View>
         </View>
         <View style={styles.innerCard}>
@@ -47,4 +49,4 @@ const HandlePress = () => {
   )
 }
 
-export default JobsCard
+export default CharactersCard

@@ -28,11 +28,23 @@ export const styles = StyleSheet.create({
     fontSize:12,
     fontWeight:'bold'
   },
+  category:{
+    fontSize:15,
+    fontWeight:"bold",
+    color:"orange",
+    fontStyle:"italic",
+    textAlign:"center"
+  },
+  inner:{
+    flex:1,
+    minWidth:"60%",
+    flexWrap:"wrap",
+    justifyContent:"space-between"
+  },
   name:{
     color:"#192655",
     fontSize:18,
     fontWeight:"bold",
-    padding:10
   },
   image:{
     flex:1,
