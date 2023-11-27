@@ -13,14 +13,14 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen options={{
+        <Stack.Screen options={{
             headerShown: false,
           }} component={LogInPage}
            name='LogInPage'/>
         <Stack.Screen options={{
             headerShown: false,
           }} component={SıgnUpPage} 
-          name='SıgnUpPage'/> */}
+          name='SıgnUpPage'/>
         <Stack.Screen
           options={{
             headerShown: false,
