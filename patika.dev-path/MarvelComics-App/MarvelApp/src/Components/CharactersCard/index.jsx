@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Alert, Image,FlatList } from 'react-native'
-import { styles } from './JobsCard.Style'
+import { styles } from './CharactersCard.Style'
 import { useDispatch } from 'react-redux'
 import { addFavorites } from '../../Redux/Slices/GeneralSlice'
 const CharactersCard = ({ item, onPress }) => {
