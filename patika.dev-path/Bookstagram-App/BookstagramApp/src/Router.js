@@ -1,32 +1,30 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-// import Characters from './Pages/CharactersPage';
-// import Comics from './Pages/ComicsPage';
-// import DetailPage from './Pages/DetailPage';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LogInPage from './Pages/LogInPage';
 import SıgnUpPage from './Pages/SıgnUpPage';
-import FavPage from './Pages/FavPage';
-import Loading from './Pages/Loading';
+import MainPage from './Pages/MainPage';
+import ProfilePage from './Pages/ProfilePage';
+import PostPage from './Pages/PostPage';
 const Router = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{
+        {/* <Stack.Screen options={{
             headerShown: false,
           }} component={LogInPage}
            name='LogInPage'/>
         <Stack.Screen options={{
             headerShown: false,
           }} component={SıgnUpPage} 
-          name='SıgnUpPage'/>
+          name='SıgnUpPage'/> */}
         <Stack.Screen
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
           name="MainPageRouter"
-          component={SıgnUpPage}
+          component={MainPageRouter}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -41,15 +39,21 @@ const MainPageRouter = () => {
       {/* mainpage */}
       <Tab.Screen
         options={{headerShown: false}}
-        name="ComicsRouter"
-        component={Loading}
+        name="MainPage"
+        component={MainPage}
+      />
+      <Tab.Screen
+        options={{headerShown: false}}
+        name="PostPage"
+        component={PostPage}
       />
       {/* profile */}
       <Tab.Screen
         options={{headerShown: false}}
-        name="CharactersRouter"
-        component={Loading}
+        name="ProfilePage"
+        component={ProfilePage}
       />
+      
     </Tab.Navigator>
   );
 };

@@ -2,50 +2,34 @@ import React from 'react'
 import { Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
 import styles from "./SıgnUpPage.Style";
 import { Formik } from 'formik';
-import UseFetch from 'use-http';
-import { useDispatch } from 'react-redux';
-import { isLoggedIn } from '../../Redux/Slices/GeneralSlice';
 import Loading from '../Loading';
 import Error from '../Error';
-
+import auth from "@react-native-firebase/auth"
 const SıgnUpPage = ({ navigation }) => {
-  const { get, post, response, loading, error } = UseFetch('https://example.com')
-  const dispatch = useDispatch();
-  const findUser = async (values) => {
-    const currData = await get();
-    const finded = await currData.find((item) => item.email == values.email);
-    if (response.ok) {
-      const user = {
-        "id": Math.floor(Math.random() * 1000000000000),
-        "email": values.email,
-        "password": values.password,
-        "favorites": []
-      }
-      if (finded) {
-        Alert.alert("This email already used")
-      } else {
-        await post(user);
-        await dispatch(isLoggedIn(user))
-        await navigation.navigate("MainPageRouter");
-      }
+  const userSignUp = async (values) => {
+    // console.log(values);
+     
+      auth().createUserWithEmailAndPassword(values.email,values.password)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
     }
-  }
-  if (loading) {
-    return (
-      <Loading />
-    )
-  } else if (error) {
-    return (
-      <Error props={error} />
-    )
-  }
+  
+  // if (auth()) {
+  //   return (
+  //     <Loading />
+  //   )
+  // } else if (error) {
+  //   return (
+  //     <Error props={error} />
+  //   )
+  // }
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.company}>Marvel App</Text>
+        <Text style={styles.company}>Bookstagram</Text>
         <Formik
           initialValues={{ email: "", password: "" }}
-          onSubmit={values => findUser(values)}
+          onSubmit={values => userSignUp(values)}
         >{({ handleChange, handleBlur, handleSubmit, values }) => (
           <View>
             <TextInput

@@ -1,46 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
 import styles from "./Loginpage.Style";
 import { Formik } from 'formik';
-import UseFetch from 'use-http';
-import { useDispatch } from 'react-redux';
-import { isLoggedIn } from '../../Redux/Slices/GeneralSlice';
 import Loading from '../Loading';
 import Error from '../Error';
-
+import auth from "@react-native-firebase/auth"
 const LogInPage = ({navigation}) => {
-  const { loading, error, data = [] } = UseFetch('https://jsonplaceholder.typicode.com/users', [])
-  const dispatch = useDispatch();
+  const [err,setErr] = useState(null)
   const findUser = async (values) => {
-    const finded = data.find((item) => item.email == values.email);
-    if (finded) {
-      if (finded.username == values.password) {
-        dispatch(isLoggedIn(data));
-        navigation.navigate("MainPageRouter")
-      } else {
-        Alert.alert("password is not correct")
-      }
-    } else {
-      Alert.alert("User not found")
-    }
+    auth().signInWithEmailAndPassword(values.email,values.password).then((res) => console.log(res)).catch(err => setErr(err))
   }
-  if (loading) {
+  if (auth().loading) {
     return (
       <Loading />
-    )
-  } else if (error) {
+    )}
+    if (err) {
     return (
-      <Error props={error} />
+      <Error props={err} />
     )
   }
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <Image
-          // source={require()}
+          source={require("../../../assets/logo.png")}
           style={styles.imageStyle}
         />
-        <Text style={styles.company}>Marvel App</Text>
+        <Text style={styles.company}>Bookstagram</Text>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={values => findUser(values)}

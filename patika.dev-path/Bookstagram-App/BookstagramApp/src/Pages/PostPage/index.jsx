@@ -1,13 +1,12 @@
 import React from 'react'
 import { View } from 'react-native'
 
-const ProfilePage = () => {
+const PostPage = () => {
   return (
     <View>
-      ProfilePAge
+      PostPage
     </View>
-
     )
 }
 
-export default ProfilePage
+export default PostPage

@@ -5,7 +5,7 @@ const Error = ({props}) => {
   return (
     <View>
       <Text>
-        {props}
+        {JSON.stringify(props)}
       </Text>
     </View>
   )

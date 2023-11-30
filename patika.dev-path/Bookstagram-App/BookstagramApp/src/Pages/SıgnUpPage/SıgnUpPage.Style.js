@@ -5,7 +5,7 @@ export default StyleSheet.create({
     // justifyContent: "center",
     alignItems: "center",
     height: "100%",
-    backgroundColor: "#ededed"
+    backgroundColor: "#161A30"
   },
   main: {
     display: "flex",
@@ -13,12 +13,19 @@ export default StyleSheet.create({
     width: "100%",
     marginTop:40,
     padding: 50,
+
   },
   input: {
     borderRadius: 100,
     paddingHorizontal: 20,
     backgroundColor: "#dadada",
-    margin:15
+    margin:15,
+  },
+  imageStyle: {
+    zIndex: 1,
+    width: 400,
+    height: 300,
+    alignSelf:"center",
   },
   button:{
     padding:10,
@@ -28,15 +35,15 @@ export default StyleSheet.create({
     alignSelf:"center",
     backgroundColor:"#E74646",
     borderRadius:100,
-    color:"#fff"
-    
+    color:"#fff",
+    marginTop:10
   },
   company:{
     fontWeight:"700",
     fontSize:35,
     textAlign:"center",
     color:"#E74646",
-    marginBottom:10
+    marginBottom:20
   },
   textColor:{
     color:"#fff"
