@@ -2,16 +2,27 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor:"#B31312",
-    paddingHorizontal: 20,
-    paddingVertical:10,
-  },
-  generalCard:{
-    backgroundColor:"white",
-    borderRadius:30,
-    padding:15,
+    backgroundColor:"#111426",
+    borderRadius:25,
+    padding:20,
     borderWidth:1,
-    borderColor:"#cecece",
+    borderColor:"#0d0f1c",
+  },
+  headerArea:{
+    flexDirection:"row",
+    alignItems:"center",
+    marginBottom:30,
+  },
+  header:{
+    fontWeight:"bold",
+    fontSize:16,
+    marginLeft:10,
+    color:"gray"
+  },
+  icon:{
+    width:30,
+    height:30,
+    zIndex:200
   },
   innerCard:{
     flexDirection:"row",
@@ -28,29 +39,25 @@ export const styles = StyleSheet.create({
     fontSize:12,
     fontWeight:'bold'
   },
-  category:{
-    fontSize:15,
-    fontWeight:"bold",
-    color:"orange",
-    fontStyle:"italic",
-    textAlign:"center"
+  bookHeader:{
+    color:"gray",
+    fontSize:22,
+    fontWeight:"900"
   },
-  inner:{
-    flex:1,
-    minWidth:"60%",
-    flexWrap:"wrap",
-    justifyContent:"space-between"
-  },
-  name:{
-    color:"#192655",
-    fontSize:18,
-    fontWeight:"bold",
-  },
+  title:{
+    color:"gray",
+    fontSize:14,
+    marginTop:14,
+  },  
   image:{
     flex:1,
     width:"100%",
     height:500,
     marginVertical:10,
     borderRadius:20
+  },
+  category:{
+    color:"gray",
+    fontSize:16,
   }
 });

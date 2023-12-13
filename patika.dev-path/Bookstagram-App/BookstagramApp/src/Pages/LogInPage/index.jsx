@@ -5,10 +5,16 @@ import { Formik } from 'formik';
 import Loading from '../Loading';
 import Error from '../Error';
 import auth from "@react-native-firebase/auth"
+import { useDispatch } from 'react-redux';
 const LogInPage = ({navigation}) => {
   const [err,setErr] = useState(null)
+  const dispatch = useDispatch();
   const findUser = async (values) => {
-    auth().signInWithEmailAndPassword(values.email,values.password).then((res) => console.log(res)).catch(err => setErr(err))
+    auth().signInWithEmailAndPassword(values.email,values.password).then((res) => {
+      dispatch(res.uid);
+      console.log(res.uid);
+    }).catch(err => setErr(err));
+    navigation.navigate("MainPageRouter");
   }
   if (auth().loading) {
     return (

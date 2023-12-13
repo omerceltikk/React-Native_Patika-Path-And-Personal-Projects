@@ -1,6 +1,5 @@
 import { Provider } from "react-redux"
 import store from "./Redux/Store";
-import { Text } from "react-native";
 import Router from "./Router";
 function App() {
 
