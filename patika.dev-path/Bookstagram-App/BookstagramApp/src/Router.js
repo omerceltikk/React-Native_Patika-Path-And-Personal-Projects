@@ -11,16 +11,15 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen options={{
+        <Stack.Screen options={{
             headerShown: false,
           }} component={LogInPage}
            name='LogInPage'/>
         <Stack.Screen options={{
             headerShown: false,
           }} component={SıgnUpPage} 
-          name='SıgnUpPage'/> */}
+          name='SıgnUpPage'/>
         <Stack.Screen
-        
           options={{
             headerShown: false,
             headerTintColor: "#111426",
@@ -42,7 +41,7 @@ const MainPageRouter = () => {
       <Tab.Screen
         options={{
           headerShown: true,
-          headerTitle:"sadasdsa",
+          headerTitle:"Posts",
           // headerTintColor:"white",
         }}
         name="MainPage"
@@ -50,13 +49,13 @@ const MainPageRouter = () => {
       />
       <Tab.Screen
         options={{headerShown: true}}
-        name="PostPage"
+        name="Send Post"
         component={PostPage}
       />
       {/* profile */}
       <Tab.Screen
         options={{headerShown: true}}
-        name="ProfilePage"
+        name="Profile Page"
         component={ProfilePage}
       />
       

@@ -9,18 +9,15 @@ import { useDispatch } from 'react-redux';
 import { showMessage } from 'react-native-flash-message';
 const LogInPage = ({navigation}) => {
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   const findUser = async (values) => {
     try {
       setLoading(true);
-      await auth().signInWithEmailAndPassword(values.email,values.password).then((res) => {
-        dispatch(res.uid);
-      })
+      await auth().signInWithEmailAndPassword(values.email,values.password)
       setLoading(false);
       navigation.navigate("MainPageRouter");
     } catch (error) {
       showMessage({
-        message: error.code,
+        message: JSON.stringify(error),
         type: "danger",
       });
       setLoading(false)

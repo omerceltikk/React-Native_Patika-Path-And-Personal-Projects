@@ -21,8 +21,7 @@ const MainPage = () => {
     return(
       <Loading/>
     )
-  }else{
-  console.log(postData);}
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.main}> 

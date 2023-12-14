@@ -3,13 +3,6 @@ import { View, Text, TouchableOpacity, Alert, Image, FlatList } from 'react-nati
 import { styles } from './MainCard.Style'
 import { addFavorites } from '../../Redux/Slices/GeneralSlice'
 const PostsCard = (data) => {
-  // const dispatch = useDispatch();
-  // const renderProduct = ({ item }) =>
-  //  <TouchableOpacity>
-  //   <Text>
-  //     {item.name}
-  //   </Text>
-  // </TouchableOpacity>
   const HandlePress = () => {
     dispatch(addFavorites(item));
   }
@@ -32,6 +25,9 @@ const PostsCard = (data) => {
           </Text>
         <Text style={styles.title}>
           {data?.item?.title}
+          </Text>       
+        <Text style={styles.title}>
+          {data?.item?.date}
           </Text>       
       </View>
     </View>

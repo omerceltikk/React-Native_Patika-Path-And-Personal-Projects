@@ -10,7 +10,7 @@ import auth from "@react-native-firebase/auth"
 
 const PostPage = () => {
   const [currError, setCurrError] = useState(null);
-  const [currUri, setCurrUri] = useState("sadsad");
+  const [currUri, setCurrUri] = useState(null);
   const user = auth().currentUser
   const handleBookDatabase = (values) => {
     if (currUri != null) {
@@ -20,7 +20,6 @@ const PostPage = () => {
         image: currUri,
         title: values.title,  
         userid: user.uid,
-        // userid: user,
         date: new Date().toISOString()
       }
       database().ref("/bookstagram/posts").push(currDAta)
