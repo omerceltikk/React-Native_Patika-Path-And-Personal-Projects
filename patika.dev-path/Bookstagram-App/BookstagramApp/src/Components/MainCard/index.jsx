@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Alert, Image, FlatList } from 'react-native'
 import { styles } from './MainCard.Style'
 import { addFavorites } from '../../Redux/Slices/GeneralSlice'
-const PostsCard = ({ item }) => {
+const PostsCard = (data) => {
   // const dispatch = useDispatch();
   // const renderProduct = ({ item }) =>
   //  <TouchableOpacity>
@@ -14,25 +14,25 @@ const PostsCard = ({ item }) => {
     dispatch(addFavorites(item));
   }
   return (
-    <View style={styles.card}>
+    <View key={data.id} style={styles.card}>
       <View style={styles.generalCard}>
         <View style={styles.headerArea}>
           <Image style={styles.icon} source={require("../../../assets/profile-circle.png")}/>
         <Text style={styles.header}>
-          item.name
+          {data?.item?.id}
         </Text>
         </View>
-        {/* {item.thumbnail && <Image style={styles.image} source={{ uri: `${item.thumbnail?.path}.${item.thumbnail?.extension}` }} />
-        } */}
+         { <Image style={styles.image} source={{ uri: `${data?.item?.image}` }} />
+        } 
         <Text style={styles.bookHeader}>
-          item.bookName
+          {data?.item?.bookName}
         </Text>
         <Text style={styles.category}>
-          item.category
+          {data?.item?.category}
           </Text>
         <Text style={styles.title}>
-          item.title
-          </Text>
+          {data?.item?.title}
+          </Text>       
       </View>
     </View>
   )

@@ -10,7 +10,7 @@ export default StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    marginTop:40,
-    padding: 30,
+    paddingVertical: 30,
+    paddingHorizontal:10
   }
 })

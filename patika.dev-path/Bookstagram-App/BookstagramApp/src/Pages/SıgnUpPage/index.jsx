@@ -1,34 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
 import styles from "./SıgnUpPage.Style";
 import { Formik } from 'formik';
 import Loading from '../Loading';
-import Error from '../Error';
 import auth from "@react-native-firebase/auth"
+import { showMessage } from 'react-native-flash-message';
 const SıgnUpPage = ({ navigation }) => {
+  const [loading, setLoading] = useState(false);
   const userSignUp = async (values) => {
-    // console.log(values);
-     
-      auth().createUserWithEmailAndPassword(values.email,values.password)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      try {
+        setLoading(true);
+       await auth().createUserWithEmailAndPassword(values.email,values.password)
+        setLoading(false)
+        showMessage({
+          message: "Kullanıcı kaydı oluşturuldu",
+          type: "success",
+        });
+        navigation.navigate("LogInPage")
+      } catch (error) {
+        showMessage({
+          message: error.code,
+          type: "danger",
+        });
+        setLoading(false)
+      }
     }
   
-  // if (auth()) {
-  //   return (
-  //     <Loading />
-  //   )
-  // } else if (error) {
-  //   return (
-  //     <Error props={error} />
-  //   )
-  // }
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.company}>Bookstagram</Text>
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: "",username:"", password: "" }}
           onSubmit={values => userSignUp(values)}
         >{({ handleChange, handleBlur, handleSubmit, values }) => (
           <View>
@@ -38,6 +46,13 @@ const SıgnUpPage = ({ navigation }) => {
               placeholder='Type an E-mail...'
               onChangeText={handleChange("email")}
               value={values.email}
+            />
+            <TextInput
+              style={styles.input}
+              onBlur={handleBlur("username")}
+              placeholder='Type an Username'
+              onChangeText={handleChange("username")}
+              value={values.username}
             />
             <TextInput
               style={styles.input}

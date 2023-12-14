@@ -10,18 +10,20 @@ import auth from "@react-native-firebase/auth"
 
 const PostPage = () => {
   const [currError, setCurrError] = useState(null);
-  const [currUri, setCurrUri] = useState(null);
-  const newRef = database().ref("/bookstagram/posts").push();
+  const [currUri, setCurrUri] = useState("sadsad");
   const user = auth().currentUser
   const handleBookDatabase = (values) => {
     if (currUri != null) {
-      newRef.set({
+      const currDAta = {
         bookName: values.bookName,
         author: values.author,
         image: currUri,
-        title: values.title,
+        title: values.title,  
         userid: user.uid,
-      })
+        // userid: user,
+        date: new Date().toISOString()
+      }
+      database().ref("/bookstagram/posts").push(currDAta)
     } else {
       setCurrError("failed to upload image!")
     }

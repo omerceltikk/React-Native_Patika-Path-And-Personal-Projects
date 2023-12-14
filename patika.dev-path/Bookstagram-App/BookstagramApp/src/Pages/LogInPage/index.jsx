@@ -6,23 +6,29 @@ import Loading from '../Loading';
 import Error from '../Error';
 import auth from "@react-native-firebase/auth"
 import { useDispatch } from 'react-redux';
+import { showMessage } from 'react-native-flash-message';
 const LogInPage = ({navigation}) => {
-  const [err,setErr] = useState(null)
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const findUser = async (values) => {
-    auth().signInWithEmailAndPassword(values.email,values.password).then((res) => {
-      dispatch(res.uid);
-      console.log(res.uid);
-    }).catch(err => setErr(err));
-    navigation.navigate("MainPageRouter");
+    try {
+      setLoading(true);
+      await auth().signInWithEmailAndPassword(values.email,values.password).then((res) => {
+        dispatch(res.uid);
+      })
+      setLoading(false);
+      navigation.navigate("MainPageRouter");
+    } catch (error) {
+      showMessage({
+        message: error.code,
+        type: "danger",
+      });
+      setLoading(false)
+    }
   }
-  if (auth().loading) {
+  if (loading) {
     return (
       <Loading />
-    )}
-    if (err) {
-    return (
-      <Error props={err} />
     )
   }
   return (
