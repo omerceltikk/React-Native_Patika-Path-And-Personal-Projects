@@ -8,14 +8,14 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{
+        {/* <Stack.Screen options={{
           headerShown: false,
         }} component={LogInPage}
         name='LogInPage'/>
         <Stack.Screen options={{
           headerShown: false,
         }} component={SıgnUpPage} 
-        name='SıgnUpPage'/>
+        name='SıgnUpPage'/> */}
         <Stack.Screen
           options={{
             headerShown: false,
@@ -34,20 +34,16 @@ const MainPageRouter = () => {
 
   return (
     <Stack.Navigator>
-      {/* mainpage */}
       <Stack.Screen
+      
         options={{
           headerShown: true,
-          headerTitle:"Posts",
-          // headerTintColor:"white",
+          headerTitle:"Rooms",
+          headerTintColor:"#E36414",
+          headerTitleAlign:"center"
         }}
         name="MainPage"
         component={MainPage}
-      />
-      <Stack.Screen
-        options={{headerShown: true}}
-        name="Send Post"
-        component={PostPage}
       />
       
     </Stack.Navigator>

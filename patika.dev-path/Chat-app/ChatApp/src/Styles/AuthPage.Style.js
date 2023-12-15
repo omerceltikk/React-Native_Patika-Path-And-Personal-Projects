@@ -31,11 +31,11 @@ export default StyleSheet.create({
     // width:"50%",
     textAlign:"center",
     alignSelf:"center",
-    backgroundColor:"#ddd",
+    backgroundColor:"#5C8374",
     borderRadius:100,
     marginTop:10,
     borderWidth:1,
-    borderColor:"#9A031E"
+    borderColor:"#5C8374"
   },
   company:{
     fontWeight:"700",
@@ -45,7 +45,7 @@ export default StyleSheet.create({
     marginBottom:20
   },
   textColor:{
-    color:"#9A031E",
+    color:"#ddd",
   },
   link:{
     textAlign:"center",
