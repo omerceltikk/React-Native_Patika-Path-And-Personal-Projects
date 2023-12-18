@@ -3,14 +3,14 @@ import { Text, View } from 'react-native'
 import styles from "./MessageCard.Style"
 import { formatDistance, parseISO } from 'date-fns'
 import auth from "@react-native-firebase/auth"
-// import { tr } from "date-fns/locale"
+import { tr } from "date-fns/locale"
 const MessageCard = (data) => {
   const user = auth().currentUser.email
-  // const formattedDate = formatDistance(parseISO(data.item.date), new Date(), {
-  //   addSuffix: true,
-  //   // locale: tr
-  // })
-  // console.log(formattedDate);
+  const formattedDate = formatDistance(parseISO(data.item.date), new Date(), {
+    addSuffix: true,
+    locale: tr
+  })
+  console.log(formattedDate);
   return (
     <View key={data.item.id}
       style={user == data.item.user ? styles.currentUser.container : styles.otherUsers.container}>
@@ -21,7 +21,7 @@ const MessageCard = (data) => {
         {data.item.user}
       </Text>
       <Text style={user == data.item.user ? styles.currentUser.date : styles.otherUsers.date}>
-        {data.item.date}
+        {formattedDate}
       </Text>
     </View>
   )

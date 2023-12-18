@@ -35,7 +35,7 @@ const RoomPage = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-      <FlatList data={texts} renderItem={MessageCard} />
+      <FlatList data={texts.reverse()} renderItem={MessageCard} />
       </View>
       <MessageInput pageid={id} />
     </View>
