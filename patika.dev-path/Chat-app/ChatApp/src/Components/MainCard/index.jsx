@@ -1,20 +1,20 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
 import { styles } from './MainCard.Style'
-const RoomCard = (data) => {
+const RoomCard = ({ data, onPress }) => {
   const HandlePress = () => {
-    dispatch(addFavorites(item));
+    console.log(data);
   }
   return (
-    <View key={data.id} style={styles.card}>
+    <TouchableOpacity key={data.id} onPress={onPress} style={styles.card}>
       <View style={styles.generalCard}>
         <View style={styles.headerArea}>
           <Text style={styles.header}>
-            {JSON.stringify(data)}
+            {data.item.roomName}
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

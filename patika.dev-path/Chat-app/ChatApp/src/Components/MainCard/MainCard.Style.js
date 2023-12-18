@@ -2,23 +2,28 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor:"#111426",
+    flex:1,
+    backgroundColor:"#ddd",
     borderRadius:25,
     padding:20,
     borderWidth:1,
     borderColor:"#0d0f1c",
-    margin:10
+    margin:10,
+    borderStyle:"dashed",
   },
   headerArea:{
     flexDirection:"row",
     alignItems:"center",
-    marginBottom:30,
+    justifyContent:"center",
+    textAlign:"center",
+    paddingVertical:20
   },
   header:{
     fontWeight:"bold",
-    fontSize:16,
-    marginLeft:10,
-    color:"gray"
+    fontSize:25,
+    color:"#E36414",
+    justifyContent:"center",
+    alignItems:"center"
   },
   icon:{
     width:30,
