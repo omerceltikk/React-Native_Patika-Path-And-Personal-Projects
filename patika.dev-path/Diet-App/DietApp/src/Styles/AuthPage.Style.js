@@ -15,7 +15,7 @@ export default StyleSheet.create({
     borderRadius: 100,
     paddingHorizontal: 20,
     backgroundColor: "#dadada",
-    margin:15,
+    margin:10,
   },
   imageStyle: {
     zIndex: 1,
@@ -31,8 +31,6 @@ export default StyleSheet.create({
     backgroundColor:"#5C8374",
     borderRadius:100,
     marginTop:10,
-    borderWidth:1,
-    borderColor:"#5C8374"
   },
   company:{
     fontWeight:"700",

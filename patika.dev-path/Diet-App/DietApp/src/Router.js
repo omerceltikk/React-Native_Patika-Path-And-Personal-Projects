@@ -4,6 +4,7 @@ import LogInPage from './Pages/LogInPage';
 import SıgnUpPage from './Pages/SıgnUpPage';
 import MainPage from './Pages/MainPage';
 import RoomPage from './Pages/RoomPage';
+import UserInfoPage from './Pages/UserInfoPage';
 const Router = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -24,6 +25,14 @@ const Router = () => {
           }}
           name="MainPageRouter"
           component={MainPageRouter}
+          />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            headerTintColor: "#111426",
+          }}
+          name="UserInfoPage"
+          component={UserInfoPage}
           />
       </Stack.Navigator>
     </NavigationContainer>

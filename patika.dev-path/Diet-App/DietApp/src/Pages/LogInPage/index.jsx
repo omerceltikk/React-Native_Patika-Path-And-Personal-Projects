@@ -1,18 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import styles from "../../Styles/AuthPage.Style";
 import { Formik } from 'formik';
 import Loading from '../Loading';
 import auth from "@react-native-firebase/auth"
 import { showMessage } from 'react-native-flash-message';
-const LogInPage = ({navigation}) => {
+import database from "@react-native-firebase/database"
+import parseData from '../../utils/parseData';
+const LogInPage = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
+  const [isUserHaveData, setIsUserHaveData] = useState(false);
+  const db = database().ref("/dietapp/users");
+  useEffect(() => {
+    db.once('value', snapshot => {
+      const res = snapshot.val();
+      const parsedData = parseData(res);
+      setIsUserHaveData(parsedData);
+    });
+  }, [])
   const handleAuthentication = async (values) => {
     try {
       setLoading(true);
-      await auth().signInWithEmailAndPassword(values.email,values.password)
-      setLoading(false);
-      navigation.navigate("MainPageRouter");
+      await auth().signInWithEmailAndPassword(values.email, values.password);
+      const isFindedUser = await isUserHaveData.find((user) => user.userEmail == values.email && user.bmi);
+      showMessage({
+        message: "Welcome",
+        type: "success",
+      });
+      await setLoading(false);
+      if (isFindedUser) {
+        await navigation.navigate("MainPageRouter" ,{id: isFindedUser.id, status: isFindedUser.activity})
+      } else {
+        await navigation.navigate("UserInfoPage")
+      }
     } catch (error) {
       showMessage({
         message: JSON.stringify(error),

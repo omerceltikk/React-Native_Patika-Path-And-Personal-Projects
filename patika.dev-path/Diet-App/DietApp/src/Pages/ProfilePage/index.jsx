@@ -7,12 +7,10 @@ import Loading from "../Loading"
 import parseData from '../../utils/parseData';
 import Button from '../../Components/FloatingButton';
 import ContentModal from '../../Components/Modal';
-import useFetch from '../../hooks/UseFetch/useFetch';
-import { showMessage } from 'react-native-flash-message';
-const MainPage = ({navigation ,route}) => {
-  const db = database().ref("/dietapp/users");
-  const {data, loading, error} = useFetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=60cd5ca1&app_key=9567044d0c4ee0b57db4f338732a35ba&diet=high-protein
-  `)
+const MainPage = ({navigation}) => {
+  const [postData, setPostData] = useState(null);
+  const [visibleModal, setVisibleModal] = useState(false);
+  const data = database().ref("/dietapp/users");
   useEffect(() => {
     data.on('value', snapshot => {
       const res = snapshot.val();
@@ -21,6 +19,7 @@ const MainPage = ({navigation ,route}) => {
     });
 
   }, [])
+
   function sendContent(data) {
     const contentObj = {
       roomName: data,
@@ -44,17 +43,6 @@ const MainPage = ({navigation ,route}) => {
   }
   function handlePress(id){
     navigation.navigate("RoomPage", {id: id })
-  }
-  if(loading){
-    return(
-      <Loading/>
-    )
-  }
-  if (error){
-    showMessage({
-      message: JSON.stringify(error),
-      type: "danger",
-    });
   }
   return (
     <SafeAreaView style={styles.container}>
