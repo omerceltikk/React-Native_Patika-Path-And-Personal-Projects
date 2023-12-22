@@ -8,7 +8,8 @@ import { showMessage } from 'react-native-flash-message';
 import { RadioButton } from 'react-native-paper';
 import DropdownComp from '../../Components/Dropdown';
 import auth from "@react-native-firebase/auth"
-const UserInfoPage = ({navigation}) => {
+import helperData from "../../Components/Dropdown/helperData"
+const UserInfoPage = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const userMail = auth().currentUser.email
   const handleUserInfo = async (values) => {
@@ -19,8 +20,8 @@ const UserInfoPage = ({navigation}) => {
       weight: values.weight,
       height: values.height,
       activity: values.activity,
-      bmi: values.weight / ((values.height/100 ) * (values.height/100)),
-      dietData:""
+      bmi: values.weight / ((values.height / 100) * (values.height / 100)),
+      dietData: ""
     }
     try {
       await database().ref("/dietapp/users").push(currData)
@@ -87,7 +88,7 @@ const UserInfoPage = ({navigation}) => {
                 onChangeText={handleChange("age")}
                 value={values.age}
                 keyboardType="numeric"
-                />
+              />
               <TextInput
                 style={styles.innerInput}
                 keyboardType="numeric"
@@ -95,7 +96,7 @@ const UserInfoPage = ({navigation}) => {
                 placeholder='Height (cm)...'
                 onChangeText={handleChange("height")}
                 value={values.height}
-                />
+              />
               <TextInput
                 keyboardType="numeric"
                 style={styles.innerInput}
@@ -110,6 +111,7 @@ const UserInfoPage = ({navigation}) => {
               onChange={handleChange("activity")}
               value={values.activity}
               onBlur={handleBlur("activity")}
+              data={helperData}
             />
             <TouchableOpacity onPress={handleSubmit} style={styles.button}>
               <Text style={styles.textColor}>Submit</Text>

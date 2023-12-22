@@ -3,21 +3,15 @@ const deviceSize = Dimensions.get("window")
 export default StyleSheet.create({
   container: {
     alignItems: "center",
-    height: deviceSize.height / 4,
     backgroundColor: "#eee",
-    justifyContent:"space-between"
-  },
-  input: {
-    paddingHorizontal: 20,
-    width:"90%",
-    borderRadius:20,
-    margin:15,
+    justifyContent:"space-between",
+    borderRadius:15
   },
   button:{
     padding:10,
-    marginBottom:10,
+    margin:30,
     borderRadius:10,
-    backgroundColor:"#E36414",
+    backgroundColor:"#5C8374",
     justifyContent:"end",
     alignItems:"center",
     width: deviceSize.width /2,
@@ -29,5 +23,14 @@ export default StyleSheet.create({
   modal:{
     justifyContent:"center",
     margin:0
+  },
+  title: {
+    fontSize:16,
+    fontWeight:"bold",
+    fontStyle:"italic",
+    margin:10
+  },
+  picker:{
+    backgroundColor:"#eee",
   }
 })

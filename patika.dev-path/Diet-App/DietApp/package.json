@@ -22,6 +22,8 @@
     "formik": "^2.4.5",
     "react": "18.2.0",
     "react-native": "0.73.0",
+    "react-native-calendars": "^1.1286.0",
+    "react-native-date-picker": "^4.3.5",
     "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-modal": "^13.0.1",

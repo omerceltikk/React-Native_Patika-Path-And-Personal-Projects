@@ -29,7 +29,7 @@ const LogInPage = ({ navigation }) => {
       });
       await setLoading(false);
       if (isFindedUser) {
-        await navigation.navigate("MainPageRouter" ,{id: isFindedUser.id, status: isFindedUser.activity})
+        await navigation.navigate("MainPageRouter")
       } else {
         await navigation.navigate("UserInfoPage")
       }

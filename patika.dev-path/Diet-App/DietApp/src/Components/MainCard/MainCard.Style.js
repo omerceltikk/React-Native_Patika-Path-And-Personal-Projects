@@ -2,40 +2,30 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
-    flex:1,
-    backgroundColor:"#ddd",
     borderRadius:25,
-    padding:20,
     borderWidth:1,
-    borderColor:"#0d0f1c",
+    borderColor:"#304D30",
     margin:10,
-    borderStyle:"dashed",
+    flex:1
   },
   headerArea:{
     flexDirection:"row",
     alignItems:"center",
     justifyContent:"center",
     textAlign:"center",
-    paddingVertical:20
+    flex:1,
+    paddingVertical:20,
+    maxWidth:"50%"
   },
   header:{
     fontWeight:"bold",
-    fontSize:25,
-    color:"#E36414",
+    fontSize:16,
+    color:"#000",
     justifyContent:"center",
-    alignItems:"center"
-  },
-  icon:{
-    width:30,
-    height:30,
-    zIndex:200
-  },
-  innerCard:{
-    flexDirection:"row",
-    alignItems: 'center',
-    justifyContent:"center",
-    padding:15,
-    gap:15,
+    alignItems:"center",
+    opacity:1.0,
+    padding:10,
+    marginTop:20
   },
   button:{
     backgroundColor:"#EA906C",
@@ -45,11 +35,7 @@ export const styles = StyleSheet.create({
     fontSize:12,
     fontWeight:'bold'
   },
-  bookHeader:{
-    color:"gray",
-    fontSize:22,
-    fontWeight:"900"
-  },
+
   title:{
     color:"gray",
     fontSize:14,
@@ -57,10 +43,13 @@ export const styles = StyleSheet.create({
   },  
   image:{
     flex:1,
-    width:"100%",
-    height:500,
-    marginVertical:10,
-    borderRadius:20
+    zIndex:200,
+    borderTopLeftRadius:25,
+    borderTopRightRadius:25,
+    padding:20,
+    overflow:"hidden",
+    opacity:0.9,
+    height:150,
   },
   category:{
     color:"gray",

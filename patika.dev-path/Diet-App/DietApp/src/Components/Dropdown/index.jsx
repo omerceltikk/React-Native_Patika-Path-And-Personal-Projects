@@ -2,10 +2,9 @@ import { useState } from 'react'
 import { View } from 'react-native'
 import SelectDropdown from 'react-native-select-dropdown'
 import styles from "./Dropdown.Style"
-import data from "./helperData"
 
 
-const DropdownComp = ({ onChange, value, onBlur }) => {
+const DropdownComp = ({ onChange, value, onBlur,data }) => {
   // const [value, setValue] = useState(null);
 
   return (
