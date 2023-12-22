@@ -25,7 +25,6 @@ const UserInfoPage = ({ navigation }) => {
     }
     try {
       await database().ref("/dietapp/users").push(currData)
-      console.log(values);
       setLoading(false)
       showMessage({
         message: "Kullanıcı kaydı oluşturuldu",

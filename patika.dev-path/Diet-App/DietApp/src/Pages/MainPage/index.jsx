@@ -27,7 +27,6 @@ const MainPage = ({ navigation }) => {
       type: "danger",
     });
   }
-  console.log(currentUser);
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Recommended Receipes For You:</Text>

@@ -25,19 +25,17 @@ const Router = () => {
         <Stack.Screen
           options={{
             headerShown: false,
-            headerTintColor: "#111426",
           }}
           name="MainPageRouter"
           component={MainPageRouter}
           />
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
-            headerTintColor: "#111426",
           }}
           name="UserInfoPage"
           component={UserInfoPage}
-          /> */}
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -57,17 +55,23 @@ const MainPageRouter = () => {
       />
       <Tab.Screen
         options={{
-          headerShown: false,
+          headerShown: true,
+          headerTitle:"Search",
+          headerTintColor:"#5C8374",
+          headerTitleAlign:"center"
         }}
         name="SearchPage"
         component={SearchPage}
       />
-      <Tab.Screen
+        <Tab.Screen
         options={{
-          headerShown: false,
+          headerShown: true,
+          headerTitle:"Profile",
+          headerTintColor:"#5C8374",
+          headerTitleAlign:"center"
         }}
-        name="ProfilePageNavigator"
-        component={ProfilePageNavigator}
+        name="ProfilePage"
+        component={ProfilePage}
       />
       
     </Tab.Navigator>
@@ -80,8 +84,8 @@ const MainPageDetail = () => {
       <Stack.Screen
         options={{
           headerShown: true,
-          headerTitle:"Rooms",
-          headerTintColor:"#E36414",
+          headerTitle:"Receipes",
+          headerTintColor:"#5C8374",
           headerTitleAlign:"center"
         }}
         name="MainPage"
@@ -90,8 +94,8 @@ const MainPageDetail = () => {
       <Stack.Screen
         options={{
           headerShown: true,
-          headerTitle:"Rooms",
-          headerTintColor:"#E36414",
+          headerTitle:"Receipe Detail",
+          headerTintColor:"#5C8374",
           headerTitleAlign:"center"
         }}
         name="DetailPage"
@@ -103,33 +107,7 @@ const MainPageDetail = () => {
   );
 };
 
-const ProfilePageNavigator = () => {
-  const Stack = createNativeStackNavigator();
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        options={{
-          headerShown: true,
-          headerTitle:"Rooms",
-          headerTintColor:"#E36414",
-          headerTitleAlign:"center"
-        }}
-        name="ProfilePage"
-        component={ProfilePage}
-      />
-      <Stack.Screen
-        options={{
-          headerShown: true,
-          headerTitle:"Rooms",
-          headerTintColor:"#E36414",
-          headerTitleAlign:"center"
-        }}
-        name="DetailPage"
-        component={DetailPage}
-      />
-    </Stack.Navigator>
-  );
-};
+
 
 
 export default Router;

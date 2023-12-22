@@ -10,7 +10,6 @@ const MessageCard = (data) => {
     addSuffix: true,
     locale: tr
   })
-  console.log(formattedDate);
   return (
     <View key={data.item.id}
       style={user == data.item.user ? styles.currentUser.container : styles.otherUsers.container}>
