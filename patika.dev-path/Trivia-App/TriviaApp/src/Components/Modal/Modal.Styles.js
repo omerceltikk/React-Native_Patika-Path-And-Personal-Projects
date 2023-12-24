@@ -5,19 +5,21 @@ export default StyleSheet.create({
     alignItems: "center",
     height: deviceSize.height / 4,
     backgroundColor: "#eee",
-    justifyContent:"space-between"
+    justifyContent:"space-around",
+    borderRadius:25
   },
   input: {
     paddingHorizontal: 20,
     width:"90%",
     borderRadius:20,
     margin:15,
+    backgroundColor:"#eee"
   },
   button:{
     padding:10,
     marginBottom:10,
     borderRadius:10,
-    backgroundColor:"#E36414",
+    backgroundColor:"#2E97A7",
     justifyContent:"end",
     alignItems:"center",
     width: deviceSize.width /2,
@@ -26,8 +28,5 @@ export default StyleSheet.create({
     color:"#ccc",
     textAlign:"center"
   },
-  modal:{
-    justifyContent:"center",
-    margin:0
-  }
+
 })

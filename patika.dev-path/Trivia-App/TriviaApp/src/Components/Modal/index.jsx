@@ -1,27 +1,32 @@
 import React, { useState } from 'react'
-import { View, TextInput, TouchableOpacity, Text } from 'react-native'
+import { View,TouchableOpacity, Text } from 'react-native'
 import Modal from 'react-native-modal'
 import styles from "./Modal.Styles"
+import DropdownComp from '../Dropdown'
 const ContentModal = ({ visible, onSend, onClose }) => {
-  const [text, setText] = useState("")
+  const [difficulty, setDifficulty] = useState("easy")
+  const difficulties = [
+    "easy",
+    "medium",
+    "hard"
+  ]
   return (
     <Modal
-    style={styles.modal}
-     isVisible={visible}
+      isVisible={visible}
       onSwipeComplete={onClose}
       onBackdropPress={onClose}
       onBackButtonPress={onClose}
-      >
+    >
       <View style={styles.container}>
-        <TextInput
+        <Text style={styles.title}>Select difficulty:</Text>
+        <DropdownComp
+          onChange={setDifficulty}
           style={styles.input}
-          placeholder='Enter A Room Name...'
-          onChangeText={setText}
-          // multiline
+          data={difficulties}
         />
-        <TouchableOpacity onPress={() =>onSend(text)} style={styles.button}>
+        <TouchableOpacity onPress={() => {onSend( difficulty)}} style={styles.button}>
           <Text style={styles.buttonText}>
-            Create
+            Start!
           </Text>
         </TouchableOpacity>
       </View>

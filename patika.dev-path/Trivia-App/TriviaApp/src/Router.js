@@ -3,20 +3,22 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LogInPage from './Pages/LogInPage';
 import SıgnUpPage from './Pages/SıgnUpPage';
 import MainPage from './Pages/MainPage';
-import RoomPage from './Pages/RoomPage';
+import CategoriesPage from './Pages/CategoriesPage';
+import GamePage from './Pages/GamePage';
+import ResultPage from './Pages/ResultPage';
 const Router = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{
+        {/* <Stack.Screen options={{
           headerShown: false,
         }} component={LogInPage}
         name='LogInPage'/>
         <Stack.Screen options={{
           headerShown: false,
         }} component={SıgnUpPage} 
-        name='SıgnUpPage'/>
+        name='SıgnUpPage'/> */}
         <Stack.Screen
           options={{
             headerShown: false,
@@ -37,23 +39,31 @@ const MainPageRouter = () => {
     <Stack.Navigator>
       <Stack.Screen
         options={{
-          headerShown: true,
-          headerTitle:"Rooms",
-          headerTintColor:"#E36414",
-          headerTitleAlign:"center"
+          headerShown: false,   
         }}
         name="MainPage"
         component={MainPage}
       />
       <Stack.Screen
         options={{
-          headerShown: true,
-          headerTitle:"Room",
-          headerTintColor:"#E36414",
-          headerTitleAlign:"center"
+          headerShown: false,
         }}
-        name="RoomPage"
-        component={RoomPage}
+        name="CategoriesPage"
+        component={CategoriesPage}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="GamePage"
+        component={GamePage}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="ResultPage"
+        component={ResultPage}
       />
       
     </Stack.Navigator>

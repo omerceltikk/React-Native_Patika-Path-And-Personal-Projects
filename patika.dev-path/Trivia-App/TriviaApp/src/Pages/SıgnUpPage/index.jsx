@@ -34,7 +34,7 @@ const SıgnUpPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.company}>Bookstagram</Text>
+        <Text style={styles.company}>Trivia App</Text>
         <Formik
           initialValues={{ email: "",username:"", password: "" }}
           onSubmit={values => userSignUp(values)}

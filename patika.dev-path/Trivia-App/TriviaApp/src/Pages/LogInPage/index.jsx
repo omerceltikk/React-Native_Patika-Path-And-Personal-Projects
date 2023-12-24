@@ -5,12 +5,12 @@ import { Formik } from 'formik';
 import Loading from '../Loading';
 import auth from "@react-native-firebase/auth"
 import { showMessage } from 'react-native-flash-message';
-const LogInPage = ({navigation}) => {
+const LogInPage = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const handleAuthentication = async (values) => {
     try {
       setLoading(true);
-      await auth().signInWithEmailAndPassword(values.email,values.password)
+      await auth().signInWithEmailAndPassword(values.email, values.password)
       setLoading(false);
       navigation.navigate("MainPageRouter");
     } catch (error) {
@@ -30,10 +30,9 @@ const LogInPage = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.main}>
         <Image
-          source={require("../../../assets/logo1.png")}
+          source={require("../../../assets/logo2.png")}
           style={styles.imageStyle}
         />
-        <Text style={styles.company}>Chat App</Text>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={values => handleAuthentication(values)}

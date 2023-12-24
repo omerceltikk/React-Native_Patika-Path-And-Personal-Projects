@@ -1,20 +1,24 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
 import { styles } from './MainCard.Style'
-const RoomCard = ({ data, onPress }) => {
-  const HandlePress = () => {
-    console.log(data);
-  }
+const RoomCard = ({ data }) => {
+ 
+    console.log(data.item);
+  
   return (
-    <TouchableOpacity key={data.id} onPress={onPress} style={styles.card}>
-      <View style={styles.generalCard}>
+    <View key={data.id} style={styles.card}>
         <View style={styles.headerArea}>
           <Text style={styles.header}>
-            {data.item.roomName}
+            {data.item.userName.split("@",1)}
           </Text>
-        </View>
+          <Text style={styles.title}>
+            {data.item.category}
+          </Text>
+          <Text style={styles.header}>
+            {data.item.point}
+          </Text>
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
