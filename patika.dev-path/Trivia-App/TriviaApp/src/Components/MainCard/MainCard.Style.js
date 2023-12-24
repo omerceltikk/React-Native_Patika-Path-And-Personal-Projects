@@ -1,0 +1,69 @@
+import {StyleSheet} from 'react-native';
+
+export const styles = StyleSheet.create({
+  card: {
+    flex:1,
+    backgroundColor:"#ddd",
+    borderRadius:25,
+    padding:20,
+    borderWidth:1,
+    borderColor:"#0d0f1c",
+    margin:10,
+    borderStyle:"dashed",
+  },
+  headerArea:{
+    flexDirection:"row",
+    alignItems:"center",
+    justifyContent:"center",
+    textAlign:"center",
+    paddingVertical:20
+  },
+  header:{
+    fontWeight:"bold",
+    fontSize:25,
+    color:"#E36414",
+    justifyContent:"center",
+    alignItems:"center"
+  },
+  icon:{
+    width:30,
+    height:30,
+    zIndex:200
+  },
+  innerCard:{
+    flexDirection:"row",
+    alignItems: 'center',
+    justifyContent:"center",
+    padding:15,
+    gap:15,
+  },
+  button:{
+    backgroundColor:"#EA906C",
+    color:"white",
+    padding:5,
+    borderRadius:10,
+    fontSize:12,
+    fontWeight:'bold'
+  },
+  bookHeader:{
+    color:"gray",
+    fontSize:22,
+    fontWeight:"900"
+  },
+  title:{
+    color:"gray",
+    fontSize:14,
+    marginTop:14,
+  },  
+  image:{
+    flex:1,
+    width:"100%",
+    height:500,
+    marginVertical:10,
+    borderRadius:20
+  },
+  category:{
+    color:"gray",
+    fontSize:16,
+  }
+});
