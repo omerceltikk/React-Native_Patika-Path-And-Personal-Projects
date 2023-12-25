@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import styles from './ResultPage.Style'
 import auth from "@react-native-firebase/auth"
+import database from "@react-native-firebase/database"
 const ResultPage = ({ navigation, route }) => {
   const {result}  = route.params
   const user = auth().currentUser.email
@@ -12,7 +13,9 @@ const ResultPage = ({ navigation, route }) => {
           point: result.point,
           category: result.category
         }
+        database().ref("/triviaapp/users").push(data);
     }
+    handleFinish()
   },[])
 
   return (
