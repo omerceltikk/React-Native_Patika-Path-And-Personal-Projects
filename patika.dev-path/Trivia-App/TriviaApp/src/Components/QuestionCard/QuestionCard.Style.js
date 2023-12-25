@@ -16,4 +16,18 @@ export default styles = StyleSheet.create({
     alignItems:"center",
     textAlign:"center"
   },
+  infoArea:{
+    flexDirection:"row",
+    backgroundColor:"#ddd",
+    borderRadius:20,
+    padding:15,
+    justifyContent:"space-between",
+    marginHorizontal:25
+  },
+  timer:{
+    fontWeight:"800",
+    fontSize:16,
+    color:"#27005D",
+  },
+  
 });

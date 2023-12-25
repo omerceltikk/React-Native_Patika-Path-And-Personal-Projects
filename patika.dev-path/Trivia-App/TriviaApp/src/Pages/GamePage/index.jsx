@@ -5,34 +5,13 @@ import useFetch from '../../hooks/UseFetch/useFetch';
 import { showMessage } from 'react-native-flash-message';
 import Loading from '../Loading';
 import QuestionCard from '../../Components/QuestionCard';
-const GamePage = ({ route,navigation}) => {
-  const [questionNumber, setQuestionNumber] = useState(0);
+const GamePage = ({ route, navigation }) => {
   const [points, setPoints] = useState(0);
-  const [timer, setTimer] = useState(10);
   const { starterData } = route.params;
-  const { data, loading, error } = useFetch(`https://opentdb.com/api.php?amount=10&category=${starterData.category}&difficulty=${starterData.difficulty}&type=multiple`);
+  const { data, loading, error } = useFetch(`https://opentdb.com/api.php?amount=11&category=${starterData.category}&difficulty=${starterData.difficulty}&type=multiple`);
 
   const changeQuestion = () => {
     setQuestionNumber(questionNumber + 1)
-  }
-  useEffect(() => {
-    if (questionNumber < 10) {
-
-
-    }
-  }, [questionNumber])
-
-  if (timer == 0) {
-    changeQuestion();
-    setTimer(10)
-  } else {
-    setTimeout(() => {
-      if (questionNumber < 10) {
-        setTimer(timer - 1)
-      }else{
-        navigation.navigate("ResultPage",{point : points})
-      }
-    }, 1000);
   }
 
   if (loading) {
@@ -47,12 +26,11 @@ const GamePage = ({ route,navigation}) => {
     });
   }
   function handlePress(result) {
-    console.log(result);
+      navigation.navigate("ResultPage", {result : result})
   }
   return (
     <View style={styles.container}>
-      <QuestionCard onPress={(data) => handlePress(data)} data={data?.results[questionNumber]} />
-      <Text>00:{timer}</Text>
+      <QuestionCard onResults={(data) => handlePress(data)} data={data?.results} />
     </View>
   )
 }

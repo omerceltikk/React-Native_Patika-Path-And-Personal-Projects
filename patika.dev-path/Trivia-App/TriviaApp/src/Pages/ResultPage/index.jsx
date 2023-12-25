@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import styles from './ResultPage.Style'
+import auth from "@react-native-firebase/auth"
 const ResultPage = ({ navigation, route }) => {
-  // const { points } = route.params
+  const {result}  = route.params
+  const user = auth().currentUser.email
+  useEffect(() => {
+    async function handleFinish() {
+        const data = {
+          userName : user,
+          point: result.point,
+          category: result.category
+        }
+    }
+  },[])
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>
         Congratulations
       </Text>
       <Text style={styles.header}>
-        Your Point Is : 
+        Your Point Is : {result.point}
       </Text>
       <Image
           source={require("../../../assets/pngegg.png")}
