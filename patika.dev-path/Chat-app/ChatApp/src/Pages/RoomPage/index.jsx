@@ -18,7 +18,6 @@ const RoomPage = ({ navigation, route }) => {
           return;
         }
         const parsedData = parseData(res.texts)
-        console.log(parsedData);
         setTexts(parsedData);
       })
     } catch (error) {

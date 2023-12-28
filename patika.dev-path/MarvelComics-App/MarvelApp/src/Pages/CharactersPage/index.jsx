@@ -12,7 +12,6 @@ const Comics = ({ navigation }) => {
   const ts = new Date().getTime();  
   const hash = CryptoJS.MD5(ts + Config.PRIVATE_API_KEY + Config.PUBLIC_API_KEY ).toString();
   const {loading, error, data = []} = useFetch(`http://gateway.marvel.com/v1/public/characters?limit=${page}&ts=${ts}&apikey=${Config.PUBLIC_API_KEY}&hash=${hash}`,[page]);
-  console.log(data);
   const HandlePress = (id) => {
     navigation.navigate("Detail", { id, "type": "characters" })
   }

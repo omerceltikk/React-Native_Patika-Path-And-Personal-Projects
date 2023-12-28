@@ -5,10 +5,8 @@ import styles from "./Main.Style"
 import RoomCard from '../../Components/MainCard';
 import Loading from "../Loading"
 import parseData from '../../utils/parseData';
-import ContentModal from '../../Components/Modal';
 const MainPage = ({ navigation }) => {
   const [postData, setPostData] = useState(null);
-  const [visibleModal, setVisibleModal] = useState(false);
   const data = database().ref("/triviaapp/users");
   useEffect(() => {
     data.on('value', snapshot => {

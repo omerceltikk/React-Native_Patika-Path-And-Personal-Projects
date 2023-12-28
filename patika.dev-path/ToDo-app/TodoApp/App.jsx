@@ -28,7 +28,6 @@ function App() {
       "todo": todo,
       "date": Date.now()
     }]);
-    console.log(todoList);
   }
 
   return (

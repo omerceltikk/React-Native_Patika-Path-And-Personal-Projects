@@ -5,7 +5,6 @@ import FavCard from "../../Components/FavCard"
 import { styles } from './FavPage.Style'
 const FavPage = () => {
   const data = useSelector((state) => state.marvel);
-  console.log(data.data);
   const renderItem = ({item}) => <FavCard item={item}/>
 if(data.data.length == 0){
   return(

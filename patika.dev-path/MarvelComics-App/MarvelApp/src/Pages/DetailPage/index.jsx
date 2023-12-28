@@ -11,7 +11,6 @@ const DetailPage = ({ route }) => {
   const ts = new Date().getTime();
   const hash = CryptoJS.MD5(ts + Config.PRIVATE_API_KEY + Config.PUBLIC_API_KEY).toString();
   const { loading, error, data = [] } = useFetch(`http://gateway.marvel.com/v1/public/${type}/${id}?ts=${ts}&apikey=${Config.PUBLIC_API_KEY}&hash=${hash}`, []);
-  console.log(data.data?.results[0]);
   const updateData = !loading && data.data?.results[0]
   if (loading) {
     return (

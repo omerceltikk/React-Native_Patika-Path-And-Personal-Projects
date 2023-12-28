@@ -12,7 +12,6 @@ import DetailCard from '../../components/DetailCard';
 import Loading from '../../components/Loading';
 function MealDetail({route}) {
   const category = route.params;
-  console.log(category.mealID)
   const { err, loading, data } = UseFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${category.mealID}`);
     return (
     <View style={styles.container}>

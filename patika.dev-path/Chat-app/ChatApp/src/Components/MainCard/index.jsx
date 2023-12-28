@@ -3,7 +3,6 @@ import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
 import { styles } from './MainCard.Style'
 const RoomCard = ({ data, onPress }) => {
   const HandlePress = () => {
-    console.log(data);
   }
   return (
     <TouchableOpacity key={data.id} onPress={onPress} style={styles.card}>

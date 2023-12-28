@@ -14,7 +14,6 @@ const CharactersCard = ({ item, onPress }) => {
   const HandlePress = () => {
     dispatch(addFavorites(item));
   }
-  console.log(item.urls[0]?.url);
   return (
     <View key={item.id} style={styles.card}>
       <View style={styles.generalCard}>
