@@ -1963,6 +1963,13 @@
   resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-1.3.21.tgz"
   integrity sha512-eyS2C6McNR8ihUoYfc166O1D8VYVh9KIl0UQPI8/ZJVsStlfSTgeEEh+WXge6+7SFPnZ4ewzEJdSAHH+jzcEfg==
 
+"@react-navigation/material-bottom-tabs@^6.2.19":
+  version "6.2.19"
+  resolved "https://registry.npmjs.org/@react-navigation/material-bottom-tabs/-/material-bottom-tabs-6.2.19.tgz"
+  integrity sha512-eC2hj/rR/dRaYYs7vwpaxMJgThGHNDoB8oZ1uZuzVCfLd/3x5Ow+R59g4ZFqCJ74Lfa8z+3XTmCfXkr+wepywg==
+  dependencies:
+    "@react-navigation/elements" "^1.3.21"
+
 "@react-navigation/native-stack@^6.9.17":
   version "6.9.17"
   resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-6.9.17.tgz"
@@ -6023,10 +6030,10 @@ react-native-modal@^13.0.1:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
-react-native-paper@^5.11.4:
-  version "5.11.4"
-  resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-5.11.4.tgz"
-  integrity sha512-pi48Qp1KLsU1dtnup3NsbZmpp9RrPGZIMeTK0o6KukK1YdBcmBQyMb1/sYHt1dE4pccXLQXbSVZjzNZfmxUGyQ==
+react-native-paper@^5.11.5, "react-native-paper@>= 3.0.0":
+  version "5.11.5"
+  resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-5.11.5.tgz"
+  integrity sha512-xM+VU8OjbRZ5AEpbW1gSTrerHzYmZMiUgB7RNz3lMbdSRWk39gmnIKVyI3vGIK/21R6lYikbFsfEe2XKKinQnw==
   dependencies:
     "@callstack/react-theme-provider" "^3.0.9"
     color "^3.1.2"
@@ -6055,7 +6062,7 @@ react-native-swipe-gestures@^1.0.5:
   resolved "https://registry.npmjs.org/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.5.tgz"
   integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
 
-react-native-vector-icons@*, react-native-vector-icons@^10.0.3:
+react-native-vector-icons@*, react-native-vector-icons@^10.0.3, "react-native-vector-icons@>= 6.0.0":
   version "10.0.3"
   resolved "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-10.0.3.tgz"
   integrity sha512-ZgVlV5AdQgnPHHvBEihGf2xwyziT1acpXV1U+WfCgCv3lcEeCRsmwAsBU+kUSNsU+8TcWVsX04kdI6qUaS8D7w==

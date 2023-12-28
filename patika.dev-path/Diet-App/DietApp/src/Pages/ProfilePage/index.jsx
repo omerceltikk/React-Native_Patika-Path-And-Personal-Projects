@@ -5,14 +5,11 @@ import Loading from "../Loading"
 import parseData from '../../utils/parseData';
 import getUserInfoFromDb from '../../hooks/getUserDb/getUserDb';
 import { Avatar } from 'react-native-paper';
-import { Calendar } from 'react-native-calendars';
 import { format } from 'date-fns';
 import ProfileCard from '../../Components/ProfileCard';
 import caloryNeeded from '../../utils/caloryNeededCalculator';
 const ProfilePage = () => {
   const foodData = [];
-  const [dailyCalories,setDailyCalories] = useState(0)
-  const [visibleModal, setVisibleModal] = useState(false);
   let totalCalory = 0;
   let caloryResult = 0;
   const date = format(new Date(), 'ccc MMM dd yyyy')
@@ -42,7 +39,7 @@ const ProfilePage = () => {
               Calories Needed: {caloryResult} kcal
             </Text>
             <Text style={styles.tag}>
-              Today Total Calories: {totalCalory} kcal
+              Today Total Calories: {totalCalory.toString().slice(0,6)} kcal
             </Text>
           </View>
         </View>
