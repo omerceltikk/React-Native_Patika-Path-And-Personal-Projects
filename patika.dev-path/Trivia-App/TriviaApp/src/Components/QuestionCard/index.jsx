@@ -21,9 +21,9 @@ const QuestionCard = ({ data, onResults }) => {
       setTimer(25);
     }, 1000);
   }, []);
+
   useEffect(() => {
     let timerId;
-
     if (timer > 0) {
       timerId = setTimeout(() => {
         setTimer(timer - 1);
