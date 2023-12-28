@@ -18,26 +18,11 @@ const MainPage = ({ navigation }) => {
     });
 
   }, [])
-
-  // function sendContent(data) {
-  //   const contentObj = {
-  //     roomName: data,
-  //     date: new Date().toISOString(),
-  //     texts: ""
-  //   }
-  //   database().ref("/chatapp/rooms").push(contentObj);
-  // }
-
   if (postData == null) {
     return (
       <Loading />
     )
   }
-
-  // function handleSendContent(content) {
-  //   sendContent(content)
-  //   setVisibleModal(false);
-  // }
   function handlePress(id) {
     navigation.navigate("RoomPage", { id: id })
   }

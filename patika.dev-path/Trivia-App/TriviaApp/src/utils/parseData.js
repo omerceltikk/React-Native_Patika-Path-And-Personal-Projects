@@ -5,6 +5,6 @@ export default function(data){
       ...data[key],
     }
   }).sort((a,b) => {
-  return  a.date > b.date ? -1: a.date > b.date ? 1 : 0;
+  return  a.point > b.point ? -1: a.point > b.point ? 1 : 0;
   })
 }

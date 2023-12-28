@@ -2,9 +2,6 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
 import { styles } from './MainCard.Style'
 const RoomCard = ({ data }) => {
- 
-    console.log(data.item);
-  
   return (
     <View key={data.id} style={styles.card}>
         <View style={styles.headerArea}>
