@@ -1,5 +1,3 @@
-
-
 # Kodwork App
 
 ## Step 1: Start the Metro Server
@@ -37,10 +35,12 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<img src="../Assets/Screenshot_1703775429.png" alt="drawing" width="200"/>
-<img src="../Assets/Screenshot_1703775440.png" alt="drawing" width="200"/>
-<img src="../Assets/Screenshot_1703775443.png" alt="drawing" width="200"/>
 
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703775429.png" alt="drawing" width="250"/>
+<img src="../Assets/Screenshot_1703775440.png" alt="drawing" width="250"/>
+<img src="../Assets/Screenshot_1703775443.png" alt="drawing" width="250"/>
+</div>
 
 ## Packages
 
@@ -50,7 +50,7 @@ yarn ios
 6. react-navigation-bottom-tabs
 7. reduxjs-toolkit
 8. react-redux
-10. react-native-vector-icons
-13. react-native-gesture-handler
-14. react-native-render-html
-17. react-native-vector-icons
+9. react-native-vector-icons
+10. react-native-gesture-handler
+11. react-native-render-html
+12. react-native-vector-icons

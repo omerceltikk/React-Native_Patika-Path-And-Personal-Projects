@@ -1,5 +1,3 @@
-
-
 # Meal App
 
 ## Step 1: Start the Metro Server
@@ -37,11 +35,13 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<img src="../Assets/Screenshot_1703775662.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703775666.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703775669.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703775684.png" alt="drawing" width="150"/>
 
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703775662.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775666.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775669.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775684.png" alt="drawing" width="220"/>
+</div>
 ## Packages
 
 1. dotlottie/react-player
@@ -50,7 +50,7 @@ yarn ios
 4. react-navigation/native-stack
 5. react-navigation/stack
 6. axios
-6. lottie-react-native
-7. react-native-gesture-handler
-17. react-native-safe-area-context
-8. react-native-screens
+7. lottie-react-native
+8. react-native-gesture-handler
+9. react-native-safe-area-context
+10. react-native-screens

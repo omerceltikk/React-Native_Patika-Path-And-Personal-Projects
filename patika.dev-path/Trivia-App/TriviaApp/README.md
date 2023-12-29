@@ -37,15 +37,16 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<img src="../Assets/Screenshot_1703761891.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703762121.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703761902.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703761909.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703761911.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703761918.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703762037.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703762050.png" alt="drawing" width="150"/>
-
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703761891.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762121.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761902.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761909.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761911.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761918.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762037.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762050.png" alt="drawing" width="220"/>
+</div>
 ## Packages
 
 1. react-native-firebase/auth

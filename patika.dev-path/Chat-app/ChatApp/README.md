@@ -1,5 +1,3 @@
-
-
 # Chat App
 
 ## Step 1: Start the Metro Server
@@ -38,10 +36,12 @@ npx react-native run-ios
 yarn ios
 ```
 
-<img src="../Assets/Screenshot_1703773387.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703773451.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703773454.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703773472.png" alt="drawing" width="150"/>
+<div style="display:flex"> 
+<img src="../Assets/Screenshot_1703773387.png" alt="drawing" width="200"/>
+<img src="../Assets/Screenshot_1703773451.png" alt="drawing" width="200"/>
+<img src="../Assets/Screenshot_1703773454.png" alt="drawing" width="200"/>
+<img src="../Assets/Screenshot_1703773472.png" alt="drawing" width="200"/>
+</div>
 
 ## Packages
 
