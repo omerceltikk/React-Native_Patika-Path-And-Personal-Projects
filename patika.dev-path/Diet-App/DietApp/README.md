@@ -37,15 +37,15 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
+<img src="../Assets/Screenshot_1703770162.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770167.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770176.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770182.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770197.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770204.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770243.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770304.png" alt="drawing" width="150"/>
 
-![](../Assets/Screenshot_1703770162.png)
-![](../Assets/Screenshot_1703770167.png)
-![](../Assets/Screenshot_1703770176.png)
-![](../Assets/Screenshot_1703770182.png)
-![](../Assets/Screenshot_1703770197.png)
-![](../Assets/Screenshot_1703770204.png)
-![](../Assets/Screenshot_1703770243.png)
-![](../Assets/Screenshot_1703770304.png)
 
 ## Packages
 

@@ -37,10 +37,10 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
+<img src="../Assets/Screenshot_1703775429.png" alt="drawing" width="200"/>
+<img src="../Assets/Screenshot_1703775440.png" alt="drawing" width="200"/>
+<img src="../Assets/Screenshot_1703775443.png" alt="drawing" width="200"/>
 
-![](../Assets/Screenshot_1703775429.png)
-![](../Assets/Screenshot_1703775440.png)
-![](../Assets/Screenshot_1703775443.png)
 
 ## Packages
 

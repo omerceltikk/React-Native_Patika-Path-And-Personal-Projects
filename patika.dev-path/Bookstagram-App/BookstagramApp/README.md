@@ -38,11 +38,11 @@ npx react-native run-ios
 yarn ios
 ```
 
-![](../Assets/Screenshot_1703770795.png)
-![](../Assets/Screenshot_1703770802.png)
-![](../Assets/Screenshot_1703772749.png)
-![](../Assets/Screenshot_1703772767.png)
-![](../Assets/Screenshot_1703772773.png)
+<img src="../Assets/Screenshot_1703770795.png" alt="drawing" width="120"/>
+<img src="../Assets/Screenshot_1703770802.png" alt="drawing" width="120"/>
+<img src="../Assets/Screenshot_1703772749.png" alt="drawing" width="120"/>
+<img src="../Assets/Screenshot_1703772767.png" alt="drawing" width="120"/>
+<img src="../Assets/Screenshot_1703772773.png" alt="drawing" width="120"/>
 
 ## Packages
 
