@@ -4,6 +4,7 @@ import Favorites from './Pages/FavoritesPage';
 import Jobs from './Pages/JobsPage';
 import DetailPage from './Pages/DetailPage';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const JobsRouter = () => {
   const Stack = createNativeStackNavigator();
@@ -31,12 +32,24 @@ const Router = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            tabBarLabel: 'Jobs',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="file-check-outline" color={color} size={size} />
+            )
+          }}
           name="JobsRouter"
           component={JobsRouter}
         />
         <Tab.Screen
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            tabBarLabel: 'Favorites',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="star-outline" color={color} size={size} />
+            )
+          }}
           name="FavRouter"
           component={FavRouter}
         />

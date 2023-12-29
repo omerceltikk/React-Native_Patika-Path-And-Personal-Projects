@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react'
 // import useFetch from '../../hooks/UseFetch/useFetch'
-import {  ScrollView,View,TouchableOpacity,Text } from 'react-native'
+import { ScrollView, View, TouchableOpacity, Text, SafeAreaView } from 'react-native'
 import GetLocation from 'react-native-get-location'
 import MapView from "react-native-maps"
 // import JobsCard from '../../Components/JobsCard/JobsCard'
 import { styles } from './Jobspage.Style'
 const Map = () => {
-  const [loading,setLoading] = useState(true);
-  const [locationErr,setLocationErr] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [locationErr, setLocationErr] = useState(null);
   const [location, setLocation] = useState({
-    isPermissionCompleted:false,
+    isPermissionCompleted: false,
     latitude: 0,
     longitude: 0,
-    restaurantList:[]
+    restaurantList: []
   })
- 
-    GetLocation.getCurrentPosition({
-      enableHighAccuracy: true,
-      timeout: 60000,
+
+  GetLocation.getCurrentPosition({
+    enableHighAccuracy: true,
+    timeout: 60000,
   })
-  .then(res => {
+    .then(res => {
       setLocation({
         isPermissionCompleted: true,
-        latitude : res.latitude,
+        latitude: res.latitude,
         longitude: res.longitude
       });
       setLoading(false);
-  }).catch(error => {
-    setLocationErr(error)
-  },[])
+    }).catch(error => {
+      setLocationErr(error)
+    }, [])
 
   // const {err, loading , data} = useFetch(`https://www.themuse.com/api/public/jobs?page=${page}`,page);
- 
+
   // const renderProduct = ({ item }) => <JobsCard item={item} />
   // if(loading){
   //   return(
@@ -43,16 +43,12 @@ const Map = () => {
   //   )
   // }
   return (
-    <ScrollView>
-      <Text>
-        <MapView initialRegion={{
-    latitude: location.latitude,
-    longitude: location.longitude,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
-  }}/>
-      </Text>
-    </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <MapView
+        
+        style={{ flex: 1 }}
+      />
+    </SafeAreaView>
   )
 }
 

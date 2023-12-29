@@ -43,10 +43,10 @@ function App() {
               :
               <>
                 <View style={styles.card}>
-                  <FlatList style={styles.list}  horizontal={true} data={cityData.length != 0 ? cityData.list.slice(0,5) : data?.list.slice(0,5)} renderItem={RenderProduct} />
+                  <FlatList style={styles.list}  horizontal={true} data={cityData.length != 0 ? cityData.list.slice(0,5) : data?.list?.slice(0,5)} renderItem={RenderProduct} />
                 </View>
                 <View style={styles.card}>
-                <FlatList style={styles.list}  horizontal={true} data={cityData.length != 0 ? cityData.list.slice(3) : data?.list.slice(3)} renderItem={RenderProduct} />
+                <FlatList style={styles.list}  horizontal={true} data={cityData.length != 0 ? cityData.list.slice(3) : data?.list?.slice(3)} renderItem={RenderProduct} />
                 </View>
               </>
           }

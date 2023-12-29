@@ -8,19 +8,21 @@ import {useSelector} from 'react-redux/es/hooks/useSelector';
 import LogInPage from './Pages/LogInPage';
 import SıgnUpPage from './Pages/SıgnUpPage';
 import FavPage from './Pages/FavPage';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const Router = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{
+        {/* <Stack.Screen options={{
             headerShown: false,
           }} component={LogInPage}
            name='LogInPage'/>
         <Stack.Screen options={{
             headerShown: false,
           }} component={SıgnUpPage} 
-          name='SıgnUpPage'/>
+          name='SıgnUpPage'/> */}
         <Stack.Screen
           options={{
             headerShown: false,
@@ -39,18 +41,36 @@ const MainPageRouter = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Home',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+            )
+        }}
         name="ComicsRouter"
         component={ComicsRouter}
       />
       <Tab.Screen
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Characters',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="domino-mask" color={color} size={size} />
+            )
+        }}
         name="CharactersRouter"
         component={CharactersRouter}
       />
       <Tab.Screen
         name="Favorites"
         component={FavPage}
+        options={{
+          tabBarLabel: 'Favorites',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="star-outline" color={color} size={size} />
+            )
+        }}
       />
     </Tab.Navigator>
   );

@@ -13,7 +13,7 @@
       "id": 1687778848043,
       "username": "test",
       "email": "test@test.com",
-      "password": "Test12",
+      "password": "test123",
       "isLoggedIn": false,
       "isAdmin": false,
       "image": "../../../images/avatar.png",
