@@ -1,6 +1,12 @@
-
-
 # Bookstagram App
+
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703770795.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703770802.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703772749.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703772767.png" alt="drawing" width="150"/>
+<img src="../Assets/Screenshot_1703772773.png" alt="drawing" width="150"/>
+</div>
 
 ## Step 1: Start the Metro Server
 
@@ -37,13 +43,7 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<div style="display:flex">
-<img src="../Assets/Screenshot_1703770795.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703770802.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703772749.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703772767.png" alt="drawing" width="150"/>
-<img src="../Assets/Screenshot_1703772773.png" alt="drawing" width="150"/>
-</div>
+
 ## Packages
 
 1. react-native-firebase/auth

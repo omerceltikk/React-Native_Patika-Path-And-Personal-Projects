@@ -1,5 +1,11 @@
 # Meal App
 
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703775662.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775666.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775669.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703775684.png" alt="drawing" width="220"/>
+</div>
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -36,12 +42,6 @@ npx react-native run-ios
 yarn ios
 ```
 
-<div style="display:flex">
-<img src="../Assets/Screenshot_1703775662.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703775666.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703775669.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703775684.png" alt="drawing" width="220"/>
-</div>
 ## Packages
 
 1. dotlottie/react-player

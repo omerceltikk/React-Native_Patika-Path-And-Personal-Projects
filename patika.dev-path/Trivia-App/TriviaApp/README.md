@@ -1,7 +1,15 @@
-
-
 # Trivia App
 
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703761891.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762121.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761902.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761909.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761911.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703761918.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762037.png" alt="drawing" width="220"/>
+<img src="../Assets/Screenshot_1703762050.png" alt="drawing" width="220"/>
+</div>
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -37,16 +45,7 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<div style="display:flex">
-<img src="../Assets/Screenshot_1703761891.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703762121.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703761902.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703761909.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703761911.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703761918.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703762037.png" alt="drawing" width="220"/>
-<img src="../Assets/Screenshot_1703762050.png" alt="drawing" width="220"/>
-</div>
+
 ## Packages
 
 1. react-native-firebase/auth
@@ -55,8 +54,8 @@ yarn ios
 4. react-navigation-native-stack
 5. react-navigation-stack
 6. formik
-6. react-native-flash-message
-7. react-native-modal
-8. react-native-safe-area-context
-9. react-native-screens
-10. react-native-select-dropdown
+7. react-native-flash-message
+8. react-native-modal
+9. react-native-safe-area-context
+10. react-native-screens
+11. react-native-select-dropdown

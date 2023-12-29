@@ -1,5 +1,10 @@
 # Kodwork App
 
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703775429.png" alt="drawing" width="250"/>
+<img src="../Assets/Screenshot_1703775440.png" alt="drawing" width="250"/>
+<img src="../Assets/Screenshot_1703775443.png" alt="drawing" width="250"/>
+</div>
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -35,12 +40,6 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-
-<div style="display:flex">
-<img src="../Assets/Screenshot_1703775429.png" alt="drawing" width="250"/>
-<img src="../Assets/Screenshot_1703775440.png" alt="drawing" width="250"/>
-<img src="../Assets/Screenshot_1703775443.png" alt="drawing" width="250"/>
-</div>
 
 ## Packages
 

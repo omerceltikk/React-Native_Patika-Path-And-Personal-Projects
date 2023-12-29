@@ -1,6 +1,13 @@
-
-
 # Marvel Comics App
+
+<div style="display:flex">
+<img src="../Assets/Screenshot_1703773811.png" alt="drawing" width="180"/>
+<img src="../Assets/Screenshot_1703773813.png" alt="drawing" width="180"/>
+<img src="../Assets/Screenshot_1703774628.png" alt="drawing" width="180"/>
+<img src="../Assets/Screenshot_1703774650.png" alt="drawing" width="180"/>
+<img src="../Assets/Screenshot_1703774712.png" alt="drawing" width="180"/>
+<img src="../Assets/Screenshot_1703774729.png" alt="drawing" width="180"/>
+</div>
 
 ## Step 1: Start the Metro Server
 
@@ -37,14 +44,6 @@ npx react-native run-ios
 # OR using Yarn
 yarn ios
 ```
-<div style="display:flex">
-<img src="../Assets/Screenshot_1703773811.png" alt="drawing" width="180"/>
-<img src="../Assets/Screenshot_1703773813.png" alt="drawing" width="180"/>
-<img src="../Assets/Screenshot_1703774628.png" alt="drawing" width="180"/>
-<img src="../Assets/Screenshot_1703774650.png" alt="drawing" width="180"/>
-<img src="../Assets/Screenshot_1703774712.png" alt="drawing" width="180"/>
-<img src="../Assets/Screenshot_1703774729.png" alt="drawing" width="180"/>
-</div>
 
 ## Packages
 
@@ -54,13 +53,13 @@ yarn ios
 4. react-navigation-native-stack
 5. react-navigation-stack
 6. react-navigation-bottom-tabs
-6. react-navigation/material-bottom-tabs
-7. reduxjs-toolkit
-17. react-redux
-8. json-server
-10. react-native-vector-icons
-11. date-fns
-12. react-native-safe-area-context
-13. react-native-gesture-handler
-14. react-native-screens
-17. use-http
+7. react-navigation/material-bottom-tabs
+8. reduxjs-toolkit
+9. react-redux
+10. json-server
+11. react-native-vector-icons
+12. date-fns
+13. react-native-safe-area-context
+14. react-native-gesture-handler
+15. react-native-screens
+16. use-http
